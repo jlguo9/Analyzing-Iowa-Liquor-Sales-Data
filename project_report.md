@@ -1,4 +1,4 @@
-#<p style="text-align: center">CMPT 732 Big Data Project</p>
+# CMPT 732 Big Data Project
 
 ## Problem definition: 
 What is the problem that you are trying to solve? What are the challenges of this problem?
