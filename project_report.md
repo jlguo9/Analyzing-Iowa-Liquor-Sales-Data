@@ -1,4 +1,4 @@
-#<u> CMPT 732 Big Data Project Report</u>
+# <u> CMPT 732 Big Data Project Report</u>
 
 ## Problem definition: 
 *What is the problem that you are trying to solve? What are the challenges of this problem?*
@@ -44,10 +44,10 @@ The collection is around 4.5 GB in size and contains 19 million transactions fro
 ## Problems: 
 *What problems did you encounter while attacking the problem? How did you solve them?*
 
-- ###Analysing the Big Table
+- ### Analysing the Big Table
     One of the fist issues we faced was loading and analysing the main table present in the database. As it contained only one table that too with 23 columns, it was a little difficult to fully understand the data before we perform any sort of analysis on it.
 
-- ###Dealing with New Data
+- ### Dealing with New Data
    In this project we are analysing the old historic data to analyse the past trends regarding the sales of the product. But what about the new data which keeps getting generated everyday. Let's say we run this analysis after a week we might want to consider the last week's data as well in that analysis and for that we cannot clear and reload the whole database. Therefore, we added a script for Kafka streaming which would keep checking the data-set website every night and if it finds a new range of data it streams the data using **Kafka** and updates/appends our database with new rows, which can be used in next analysis.
 
 
