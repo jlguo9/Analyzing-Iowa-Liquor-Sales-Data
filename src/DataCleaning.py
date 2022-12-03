@@ -23,10 +23,14 @@ def latitude_longitude(df,col):  #by column
     df = df.withColumn('latitude', split(df[col], ' ').getItem(1)).withColumn('longitude', split(df[col], ' ').getItem(2))
     df = df.drop(df[col])
     return df
+    
+def year_month(df,col):  #by column
+    df = df.withColumn('year', split(df[col], '-').getItem(0)).withColumn('month', split(df[col], '-').getItem(1))
+    return df
 
-def naCheck(df):
+def naCheck(df,ifdrop):
     print(df.isnull().sum())
-    if 0:
+    if ifdrop:
         df.dropna(inplace=True)
         
 def getCounty():
@@ -86,24 +90,31 @@ def main(data,inputs,output):
     	df = df.na.fill(0)
     	df_parquet_writer(df,'City',output)
     
-    if data=='product':
+    elif data=='product':
         #product
         df = product_loader(inputs)
         df = df.na.fill(0)
         df_parquet_writer(df,'Category Name',output)
     
-    if data=='sale':
+    elif data=='sale':
         #sale
         df = sale_loader(inputs)
         df = df.na.fill(0)
         df_parquet_writer(df,'Date',output)
-
+    else:
+        print('First parameter show be [store|product|sale]')
+        
 if __name__ == '__main__':
     inputs = sys.argv[2] #rawdata
     output = sys.argv[3] #parquet file
     data = sys.argv[1] # type
+    inputs = sys.argv[2] #rawdata
+    output = sys.argv[3] #parquet file
+    data = sys.argv[1] #parquet file
     spark = SparkSession.builder.appName('datacleaning code').getOrCreate()
     assert spark.version >= '3.0' # make sure we have Spark 3.0+
     spark.sparkContext.setLogLevel('WARN')
     sc = spark.sparkContext
     main(data, inputs, output)
+
+    main(data,inputs, output)
