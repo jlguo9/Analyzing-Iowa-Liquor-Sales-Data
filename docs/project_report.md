@@ -13,6 +13,8 @@ Not only that, a few more questions arise such as
 - What are the most popular products among different regions of the city they plan to expand or open their business in?
 - Are there any seasonal changes in how products are consumed? 
 
+*and more...*
+
 Analysis on above questions is necessary to take decisions such as the optimal location for their business,  what products they will sell, and how to increase sales when starting a new or
 expanding an existing business in a new city.
 
@@ -36,6 +38,23 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     The Iowa Alcoholic Beverages Division receives reports on wholesale transactions, and they make the data (from 2012 to the present) accessible at: [https://data.iowa.gov/](https://data.iowa.gov/Sales-Distribution/Iowa-Liquor-Sales/m3tr-qhgy).
 The collection is around 4.5 GB in size and contains 19 million transactions from 2012 to the present. 
+
+2. **Some Questions we intend to answer**
+
+    **Question a.** 
+    
+    **(1)** Many features and their combinations(For example: cities, mid-to-high-end wines, wine categories） can have an impact on the sales growth rate. We would like to explore which of them have significant impact on sales so that people can know what they should take into consideration when they want to explore potential market segmentations.
+
+    **(2)** Inverted display of data under significantly weighted features/combinations
+
+    **Question b.** 
+
+    **(1)** Clustering based upon Geographical location i.e. either based on Gps coordinates or zipcodes.
+
+    **(2)** Correlation analysis (coeff -1 ～ 1), to explore substitutes and complements (store level)
+
+    **Question c.**
+     Assuming that the capital at hand is certain, how can we try to maximize the profit? I.e.  finding Capital turnover rate /Wine inventory which means The more frequently you buy, the higher the capital turnover rate (Optimization problem)
 
 
 ![Alt text](./project_design.png)
