@@ -91,6 +91,11 @@ def main(inputs):
         .select(sale['Year'],sale['Sale (Dollars)'],sale['City'],product['Category Name'], product['Bottle Size'], product['Grade']) \
         .cache()
 
+    # TODO: create a list ['City','Category Name','Bottle Size','Grade'] and a nested loop of depth 2(maybe)
+    # for each iteration:
+    # - group by the corresponding feature, further group by Year to get sum(sale) of each year
+    # - for each two consecutive year compute the growth rate, and take average
+    # - then compute the variance and mean of the whole thing
 
 if __name__ == '__main__':
     inputs = sys.argv[1]
