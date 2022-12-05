@@ -27,6 +27,27 @@ product_schema = types.StructType([
     types.StructField('Report Date', types.DateType()),
 ])
 
+# sale_schema = types.StructType([
+#    types.StructField('Invoice/Item Number', types.StringType()),
+#    types.StructField('Date', types.DateType()),
+#    types.StructField('Store Number', types.StringType()),
+#    types.StructField('Bottles Sold', types.IntegerType()),
+#    types.StructField('Sale (Dollars)', types.DoubleType()),  
+#    types.StructField('Item Number', types.StringType()),
+#])
+
+store_schema = types.StructType([
+    types.StructField('Store', types.IntegerType()),
+    types.StructField('Name', types.StringType()),
+    types.StructField('Store Status', types.StringType()),
+    types.StructField('Address', types.StringType()),
+    types.StructField('City', types.StringType()),
+    types.StructField('State', types.StringType()),
+    types.StructField('Zip Code', types.StringType()),
+    types.StructField('Store Address', types.StringType()), 
+    types.StructField('Report Date', types.DateType()), 
+])
+
 @functions.udf(returnType=types.StringType())
 def divide(val, col, low, high):
     
@@ -48,7 +69,7 @@ def divide(val, col, low, high):
 
 def load_product(inputs):
     # load and extract features for product data
-    product = spark.read.options(header='True').csv(inputs+"/product-datafixed.csv", schema=product_schema) \
+    product = spark.read.options(header='True').csv(inputs+"/product-datefixed.csv", schema=product_schema) \
         .select('Item Number', 'Category Name', 'State Bottle Cost', 'Bottle Volume (ml)') \
         .cache()
     # divide the product into different bottle size
@@ -81,15 +102,15 @@ def load_product(inputs):
 
 def load_sale(inputs):
     # load and extract features from sale data
-    sale = spark.read.options(header='True', inferSchema='True', delimiter=',').csv(inputs+"/sale-datafixed.csv") \
+    sale = spark.read.options(header='True', inferSchema='True', delimiter=',').csv(inputs+"/iowa-liquor-datefixed.csv") \
         .select('Date', 'Sale (Dollars)', 'Store Number', 'Item Number')
 
     cur_year = datetime.date.today().year
     date_to_year = sale.withColumn('Year', functions.year(sale['Date'])) \
         .select('Year','Sale (Dollars)','Store Number','Item Number')
-    selected = date_to_year.where((sale['Year'] >= cur_year-4) & (sale['Year'] <= cur_year-1) )
+    selected = date_to_year.where((date_to_year['Year'] >= cur_year-4) & (date_to_year['Year'] <= cur_year-1) )
 
-    store = spark.read.options(header='True', inferSchema='True', delimiter=',').csv(inputs+"/store-datafixed.csv") \
+    store = spark.read.options(header='True').csv(inputs+"/store-datefixed.csv", schema = store_schema) \
         .select('Store', 'City')
     with_city = selected.join(store, selected['Store Number']==store['Store']) \
         .select(selected['Year'],selected['Sale (Dollars)'],selected['Item Number'],store['City'])
@@ -100,6 +121,7 @@ def load_sale(inputs):
 def main(inputs):
     product = load_product(inputs)
     sale = load_sale(inputs)
+
     # join into one df containing all features
     joined = sale.join(product, sale['Item Number']==product['Item Number']) \
         .select(sale['Year'],sale['Sale (Dollars)'],sale['City'],product['Category Name'], product['Bottle Size'], product['Grade']) \
