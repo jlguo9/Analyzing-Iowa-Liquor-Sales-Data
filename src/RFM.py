@@ -183,7 +183,10 @@ def main(inputs,output):
     # Make predictions
     predictions = model.transform(scaledData)
     predictions.show(50,False)
+    results = rfm_seg.join(predictions.select('Store Number','prediction'),'Store Number',how='left')
+    results.show(5)
     
+    results.toPandas().to_csv(output)
     
     
 if __name__ == '__main__':
