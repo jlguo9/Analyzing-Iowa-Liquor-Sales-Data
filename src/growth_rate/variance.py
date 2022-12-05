@@ -65,7 +65,7 @@ def load_sale(inputs):
         .select('Date', 'Sale (Dollars)', 'Store Number', 'Item Number')
 
     cur_year = datetime.date.today().year
-    date_to_year = sale.withColumn('Year', functions.year(with_city['Date'])) \
+    date_to_year = sale.withColumn('Year', functions.year(sale['Date'])) \
         .select('Year','Sale (Dollars)','Store Number','Item Number')
     selected = date_to_year.where((sale['Year'] >= cur_year-4) & (sale['Year'] <= cur_year-1) )
 
