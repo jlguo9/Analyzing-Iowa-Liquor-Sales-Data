@@ -219,7 +219,7 @@ def main(inputs, output):
     print(values)
     
     df = spark.createDataFrame(values, res_tag)
-    df.coalesce(1).write.option("header",True).csv(output, mode='overwrite')
+    df.orderBy('variance').coalesce(1).write.option("header",True).csv(output, mode='overwrite')
 
 if __name__ == '__main__':
     inputs = sys.argv[1]
