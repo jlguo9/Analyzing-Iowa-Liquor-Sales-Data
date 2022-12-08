@@ -12,7 +12,7 @@ We found that Products like "HA last  DROP Scotch" and "Remy Martin  Louis" can 
 
 Following Graph shows the top 5 products to invest in
 
-![](Profit per Bottle.png)
+![](Profit_per_Bottle.png)
 
 And selling just 100s of these bottles can give profit of atleast **USD 100,000** in just 6 months
 
