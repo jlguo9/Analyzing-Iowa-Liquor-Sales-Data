@@ -173,11 +173,11 @@ def main(inputs,output):
     scaledData = scalerModel.transform(transformed)
     scaledData.show(5,False)
     
-    k, silh_lst, r_table = optimal_k(scaledData,'Store Number',2,10,2)
+    k, silh_lst, r_table = optimal_k(scaledData,'Store Number',2,10,20)
     
     spark.createDataFrame(silh_lst).show()
     
-    k = 4
+    k = 2
     kmeans = KMeans().setK(k).setSeed(1)
     model = kmeans.fit(scaledData)
     # Make predictions

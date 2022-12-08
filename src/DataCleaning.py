@@ -20,7 +20,7 @@ def info(df):
 
 def latitude_longitude(df,col):  #by column
     df = df.withColumn(col, regexp_replace(regexp_replace(col, '\\(', ''),'\\)', ''))
-    df = df.withColumn('latitude', split(df[col], ' ').getItem(1)).withColumn('longitude', split(df[col], ' ').getItem(2))
+    df = df.withColumn('latitude', split(df[col], ' ').getItem(2)).withColumn('longitude', split(df[col], ' ').getItem(1))
     df = df.drop(df[col])
     return df
     
