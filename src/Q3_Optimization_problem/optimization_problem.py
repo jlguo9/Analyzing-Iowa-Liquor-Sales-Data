@@ -13,43 +13,33 @@ def main(sales_inputs, product_inputs):
     
     sales_data = spark.read.options(header='True', inferSchema='True', delimiter=',').parquet(sales_inputs)
     product_data = spark.read.options(header='True', inferSchema='True', delimiter=',').csv(product_inputs)
-    #sales_data.show()
-    product_data.show()
-    #print(data.summary())
 
 
     product_data = product_data.withColumnRenamed('Item Number', 'Item Number_1')
     joined_data = sales_data.join(product_data,
         sales_data['Item Number'] == product_data['Item Number_1']
     )
-
-    
-    # .lt(functions.lit("2015-03-14")))
-    #<=datetime.strptime("2022-10-30", "%Y-%m-%d") & joined_data['Date']>=datetime.strptime("2022-10-01", "%Y-%m-%d"))
-    # joined_data.show()
-    #datetime.strptime("2022-10-30", "%Y-%m-%d")
     
 
     joined_data = joined_data.select(joined_data['Item Number'],joined_data['Item Description'], joined_data['Date'], joined_data['Sale (Dollars)'], joined_data['Store Number'], joined_data['Bottles Sold'],joined_data['State Bottle Cost'])
     joined_data = joined_data.filter(joined_data['Date']<='2022-10-30')
     joined_data = joined_data.filter(joined_data['Date']>='2022-07-30')
     joined_data = joined_data.sort(joined_data['Date'], ascending=False)
-    joined_data.show()
+    # joined_data.show()
 
-
-    # TODO: update sales with profit(i.e sales-retail)
     joined_data = joined_data.withColumn('Profit',  joined_data['Sale (Dollars)']-(joined_data['State Bottle Cost']*joined_data['Bottles Sold']))
-    data = joined_data.groupby(joined_data['Item Description']).agg(functions.sum(joined_data['Bottles Sold']).alias('Total Bottles Sold'), functions.sum(joined_data['Sale (Dollars)']).alias('Total Sales'), functions.avg(joined_data['Profit']).alias('Avg Profit Per Order'))
+    data = joined_data.groupby(joined_data['Item Description']).agg(functions.sum(joined_data['Bottles Sold']).alias('Total Bottles Sold'), functions.sum(joined_data['Sale (Dollars)']).alias('Total Sales'), functions.sum(joined_data['Profit']).alias('Total Profit'))
     
-    # data_2 = data.withColumn('Profit per Bottle',  data["Total Sales"]/data["Total Bottles Sold"])
+    data = data.withColumn('Profit per Bottle',  data["Total Profit"]/data["Total Bottles Sold"])
     most_sales = data.sort(data["Total Bottles Sold"], ascending=False)
-    mostSales_with_most_profit = most_sales.sort(data["Avg Profit Per Order"], ascending=False)
+    mostSales_with_most_profit = most_sales.sort(data["Profit per Bottle"], ascending=False)
     mostSales_with_most_profit.show()
 
-    mostSales_with_most_profit_p = mostSales_with_most_profit.select(mostSales_with_most_profit['Item Description'], mostSales_with_most_profit['Avg Profit Per Order']).limit(5).toPandas()
-
-    mostSales_with_most_profit_p.plot.bar(stacked=False, legend=False, figsize=(20,10), width=.5)
-    #data.summary()
+    mostSales_with_most_profit_p = mostSales_with_most_profit.select(mostSales_with_most_profit['Item Description'], mostSales_with_most_profit['Profit per Bottle']).limit(5).toPandas()
+    print(mostSales_with_most_profit_p)
+    mostSales_with_most_profit_p.set_index('Item Description', inplace=True)
+    mostSales_with_most_profit_p.plot.bar(stacked=False, legend=False, figsize=(20,10), width=.5, y='Profit per Bottle')
+    plot.ylabel("Profit per Bottle")
     plot.show(block=True)
 
     
