@@ -41,7 +41,7 @@ The collection is around 4.5 GB in size and contains 19 million transactions fro
 
 2. **Some Questions we intend to answer**
 
-    [**Question 1.**](./src/growth_rate/README.md)
+    [**Question 1.**](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/growth_rate#variance-of-growth-rate-under-different-market-segmentation)
     
     **(a)** Many features and their combinations(For example: cities, mid-to-high-end wines, wine categories） can have an impact on the sales growth rate. We would like to explore which of them have significant impact on sales so that people can know what they should take into consideration when they want to explore potential market segmentation.
 
@@ -53,7 +53,7 @@ The collection is around 4.5 GB in size and contains 19 million transactions fro
 
     **(b)** Correlation analysis (coeff -1 ～ 1), to explore substitutes and complements (store level)
 
-    [**Question 3.**](./src/Q3_Optimization_problem/README.md)
+    [**Question 3.**](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q3_Optimization_problem#optimizing-profit)
 
      Assuming that the capital at hand is certain, how can we try to maximize the profit? I.e.  finding Capital turnover rate /Wine inventory which means The more frequently you buy, the higher the capital turnover rate (Optimization problem)
 
