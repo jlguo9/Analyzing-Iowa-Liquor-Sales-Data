@@ -41,19 +41,20 @@ The collection is around 4.5 GB in size and contains 19 million transactions fro
 
 2. **Some Questions we intend to answer**
 
-    **Question a.** 
+    [**Question 1.**](./src/growth_rate/README.md)
     
-    **(1)** Many features and their combinations(For example: cities, mid-to-high-end wines, wine categories） can have an impact on the sales growth rate. We would like to explore which of them have significant impact on sales so that people can know what they should take into consideration when they want to explore potential market segmentations.
+    **(a)** Many features and their combinations(For example: cities, mid-to-high-end wines, wine categories） can have an impact on the sales growth rate. We would like to explore which of them have significant impact on sales so that people can know what they should take into consideration when they want to explore potential market segmentation.
 
-    **(2)** Inverted display of data under significantly weighted features/combinations
+    **(b)** Inverted display of data under significantly weighted features/combinations
 
-    **Question b.** 
+    **Question 2.** 
 
-    **(1)** Clustering based upon Geographical location i.e. either based on Gps coordinates or zipcodes.
+    **(a)** Clustering based upon Geographical location i.e. either based on Gps coordinates or zipcodes.
 
-    **(2)** Correlation analysis (coeff -1 ～ 1), to explore substitutes and complements (store level)
+    **(b)** Correlation analysis (coeff -1 ～ 1), to explore substitutes and complements (store level)
 
-    **Question c.**
+    [**Question 3.**](./src/Q3_Optimization_problem/README.md)
+
      Assuming that the capital at hand is certain, how can we try to maximize the profit? I.e.  finding Capital turnover rate /Wine inventory which means The more frequently you buy, the higher the capital turnover rate (Optimization problem)
 
 
