@@ -161,6 +161,7 @@ def main(inputs, output):
 
     
     # for combinations of two features
+    # meaning of each step is the same as above
     for i in features:
         for j in features[features.index(i):]:
             if i == j:
@@ -187,6 +188,7 @@ def main(inputs, output):
 
 
     # for combinations of three features
+    # meaning of each step is the same as above
     for i in features:
         for j in features[features.index(i):]:
             for k in features[features.index(j):]:
@@ -215,11 +217,39 @@ def main(inputs, output):
                 values.append((i+" + "+j+" + "+k,var,mean,max,min))
 
 
+    # for combinations of all four features
+    # meaning of each step is the same as above
+    i, j, m, n = features
+    sub = joined.select('Year','Sale (Dollars)',i, j, m, n)
+    by_year = sub.groupby(i, j, m, n, 'Year').agg(functions.sum(sub['Sale (Dollars)']).alias('sale_by_year')).cache()
+    
+    # join conditions
+    cond = [functions.col("this_year."+i)==functions.col("last_year."+i), 
+    functions.col("this_year."+j)==functions.col("last_year."+j),
+    functions.col("this_year."+m)==functions.col("last_year."+m),
+    functions.col("this_year."+n)==functions.col("last_year."+n),
+    functions.col("this_year.Year")==functions.col("last_year.Year")+1]
+    
+    with_last_year = by_year.alias("this_year").join(by_year.alias("last_year"), cond) \
+        .select(functions.col('this_year.Year'),functions.col('this_year.sale_by_year'),functions.col('this_year.'+i),functions.col('this_year.'+j), 
+        functions.col('this_year.'+m), functions.col('this_year.'+n), functions.col('last_year.sale_by_year').alias('last_year_sale'))
+    growth = with_last_year.withColumn('Growth Rate', (with_last_year['sale_by_year'] - with_last_year['last_year_sale'])/with_last_year['last_year_sale'])
+    agg_growth = growth.groupby(i, j, m, n).agg(functions.mean(growth['Growth Rate']).alias('Avg Growth Rate')).cache()
+    
+    var = agg_growth.agg(functions.variance(agg_growth['Avg Growth Rate']).alias('var')).first()['var']
+    mean = agg_growth.agg(functions.mean(agg_growth['Avg Growth Rate']).alias('mean')).first()['mean']
+    max = agg_growth.agg(functions.max(agg_growth['Avg Growth Rate']).alias('max')).first()['max']
+    min = agg_growth.agg(functions.min(agg_growth['Avg Growth Rate']).alias('min')).first()['min']
+
+    values.append((i+" + "+j+" + "+m+" + "+n,var,mean,max,min))
+
+
+    # print (for debugging)
     print(res_tag)
     print(values)
     
     df = spark.createDataFrame(values, res_tag)
-    df.orderBy('variance').coalesce(1).write.option("header",True).csv(output, mode='overwrite')
+    df.orderBy(df['variance'].desc()).coalesce(1).write.option("header",True).csv(output, mode='overwrite')
 
 if __name__ == '__main__':
     inputs = sys.argv[1]
