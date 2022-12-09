@@ -1,11 +1,13 @@
-##download raw data
+## Downloading the Raw Data
+
     $ nohup wget https://data.iowa.gov/api/views/ykb6-ywnd/rows.csv?accessType=DOWNLOAD -O store.csv &
 
     $ nohup wget https://data.iowa.gov/api/views/gckp-fe7r/rows.csv?accessType=DOWNLOAD -O product.csv &
 
     $ nohup wget https://data.iowa.gov/api/views/m3tr-qhgy/rows.csv?accessType=DOWNLOAD -O iowaliquor.csv &
 
-##date fix
+## Fixing the Date column
+
     $ sed -E "s#([0-9]{2})/([0-9]{2})/([0-9]{4})#\3-\1-\2#" < iowaliquor.csv | tr -d '$' > iowa-liquor-datefixed.csv
 
     $ sed -E "s#([0-9]{2})/([0-9]{2})/([0-9]{4})#\3-\1-\2#" < store.csv | tr -d '$' > store-datefixed.csv
@@ -14,17 +16,9 @@
 
     $ sed -E "s#([0-9]{2})/([0-9]{2})/([0-9]{4})#\3-\1-\2#" < product-datefixed1.csv | tr -d '$' > product-datefixed.csv
 
-##datacleaning
+## Running the Data Cleaning Script
     $ spark-submit ./src/Data_Collecting/dataclean.py <sale|product|store> <inputs> <output>
 
-##RFM segmentation and cluster
-    $ spark-submit ./src/Q2_RFM_Cluster/RFM.py <saleData file> <output>
-	
-##join RFM with GEO
-    $ spark-submit ./src/Q2_RFM_Cluster/joinGeoRfm.py <storeData file> <output>
-	
-##draw scatterplot with map
-    $ nohup ./src/Q2_RFM_Cluster/DrawMap.py &
 
 ## check_update.py
 
@@ -52,7 +46,9 @@ where "inputs" is the path of sales table in csv format, and "output" is the pat
 
 where "inputs" is the output of total_sales_by_month.py, "modelfile" is the path of location where you want the model files to be stored, and "output" is the path of location where the predicted sales will be stored
 
-## variance.py -- Q1
+## Q1:
+
+### Running variance.py 
 
     $ spark-submit ./src/Q1_Growth_Rate/variance.py <inputs> <output>
 
@@ -62,8 +58,22 @@ and "outputs" is the path of location where the output files will be stored. The
 under which growth rate of each segment are stored under a folder named by the corresponding scenario.
 2. the final resultant DataFrame containing variance, mean, max, min of each scenario
 
+## Q2:
+### RFM segmentation and cluster
 
-## optimization_problem.py -- Q3
+    $ spark-submit ./src/Q2_RFM_Cluster/RFM.py <saleData file> <output>
+	
+### Joining RFM with GEO data
+
+    $ spark-submit ./src/Q2_RFM_Cluster/joinGeoRfm.py <storeData file> <output>
+	
+### Draw scatterplot with map
+    $ nohup ./src/Q2_RFM_Cluster/DrawMap.py &
+
+
+## Q3: 
+
+###Running optimization_problem.py 
 
     $ spark-submit ./src/Q3_Optimization_problem/optimization_problem.py <input_1> <input_2>../../../project_data/testsale ../../../project_data/product
 
