@@ -88,6 +88,11 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
 - Problem 2: Describe and Classify the current stores with respect to  using RFM model
 
+    Through analysis, we found that traditional retail analysis methods can be used to analyze merchants.
+At the same time, we found that the features obtained by using RFM can classify merchants very well.
+These classifications directly reflect the simple and direct business logic on the map. Good businesses are located in densely populated areas with convenient transportation and are relatively concentrated.
+Using this conclusion, we can help merchants make better site selection, and at the same time, for winery sales staff, they can also help them better locate the top customer groups.
+
     Check More Details here: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q2_RFM_Cluster#result)
 
 
