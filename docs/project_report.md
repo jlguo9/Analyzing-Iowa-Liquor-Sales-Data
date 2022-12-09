@@ -38,9 +38,10 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     The Iowa Alcoholic Beverages Division receives reports on wholesale transactions, and they make the data (from 2012 to the present) accessible at: [https://data.iowa.gov/](https://data.iowa.gov/Sales-Distribution/Iowa-Liquor-Sales/m3tr-qhgy).
 
-    The initial(uncleaned) was around 5.7 GB in size and contains more than 25 million transactions from 2012 to the present along with 25 columns. 
+    For the main data source is a 5.7 GB file iowa-liquor. Through analysis, we found that this table contains store information, product information and transaction information. Among them, there are a lot of redundant and wrong data in the store data, such as information loss, multiple names for the same store, etc. In addition, the geographical location is stored as coordinate point data instead of latitude and longitude, and there are errors in the date format. 
 
-    After performing Data Cleaning we normalized the data into 3 tables sales, products and stores which helped us to work with just the required columns instead of all 25 columns
+    In order to facilitate analysis and remove redundant and erroneous data, we use the official store table and product table to replace the original data(by drop the columns from iowa-liquor). In this way, while proofreading the data, it also normalizes the data. After solving all the mentioned problems, the data becomes three tables of sale, store and product. Each table can be updated individually via Kafka in real-time. It is convenient for subsequent analysis and mining.
+
 
 2. **Some Questions we intend to answer**
 
