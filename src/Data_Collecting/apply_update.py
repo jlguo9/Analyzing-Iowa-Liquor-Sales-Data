@@ -34,7 +34,7 @@ def sale(topic,output):
             lst.append(msg.value)
             cur_time = time.time()
             # flush the data every 5 minutes 
-            if int(cur_time - start_time)==300 and len(lst) != 0:
+            if int(cur_time - start_time)>=300 and len(lst) != 0:
                 data_action(lst,"sale",output)
                 start_time = cur_time
                 lst.clear()
@@ -66,7 +66,7 @@ def store(topic,output):
             lst.append(msg.value)
             cur_time = time.time()
             # flush the data every 5 minutes 
-            if int(cur_time - start_time)==300 and len(lst) != 0:
+            if int(cur_time - start_time)>=300 and len(lst) != 0:
                 data_action(lst,"store",output)
                 start_time = cur_time
                 lst.clear()
@@ -98,7 +98,7 @@ def product(topic,output):
             lst.append(msg.value)
             cur_time = time.time()
             # flush the data every 5 minutes 
-            if int(cur_time - start_time)==300 and len(lst) != 0:
+            if int(cur_time - start_time)>=300 and len(lst) != 0:
                 data_action(lst,"product",output)
                 start_time = cur_time
                 lst.clear()
