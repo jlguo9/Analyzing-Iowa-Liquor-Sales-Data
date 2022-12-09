@@ -13,7 +13,7 @@ Frequency is the total number of transactions made by the customer (during a def
 Monetary is the total amount that the customer has spent across all transactions (during a defined period).
 We select the data of the most recent year as the defined period.
 
-The second step is to divide the customer list into tiered groups for each of the three dimensions (R, F and M), using Pandas describe. Unless using specialized software, it's recommended to divide the customers into four tiers for each dimension, Such that each customer will be assigned to one tier in each dimension:
+The second step is to divide the store list into tiered groups for each of the three dimensions (R, F and M), using Pandas describe. Unless using specialized software, it's recommended to divide the store into four tiers for each dimension, Such that each store will be assigned to one tier in each dimension:
 We use 25% 50% 75% points and others to divide different tiers.
 
 Next, we use the kmeans algorithm to try to classify according to these features, and display them on the graph to observe whether the classification has practical significance.
@@ -23,3 +23,11 @@ In the end, we found that dividing merchants into two categories worked best. Na
 as the picture shows:
 We can see that on the scatter plot, we can clearly feel that there is an obvious data aggregation in some positions and good merchants concentrated. These scattered points obviously reflect the information of geographical location and traffic arteries.
 To prove this, we superimposed the scatter plot on the map to see that it is very close to our judgment. In order to reflect our hypothesis more clearly, we further took out the map of iowa for comparison. It can be seen that our conjecture is fully verified. Good merchants are mainly distributed in major cities, major traffic routes, and border cities of Iowa State. It can be seen that RFM can be used to describe iowa liquor merchants. This enables data consumers to generate more targeted policies. For example: the data results based on this can help merchants select locations, and help winery sales personnel to find the best target group for promotion and marketing.
+
+summary:
+
+Through analysis, we found that traditional retail analysis methods can be used to analyze merchants.
+At the same time, we found that the features obtained by using RFM can classify merchants very well.
+These classifications directly reflect the simple and direct business logic on the map. Good businesses are located in densely populated areas with convenient transportation and are relatively concentrated.
+Using this conclusion, we can help merchants make better site selection, and at the same time, for winery sales staff, they can also help them better locate the top customer groups.
+ 

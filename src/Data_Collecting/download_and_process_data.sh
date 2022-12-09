@@ -1,10 +1,10 @@
 #pre 
 #download raw data
-nohup wget https://data.iowa.gov/api/views/ykb6-ywnd/rows.csv?accessType=DOWNLOAD -O store.csv &
+wget https://data.iowa.gov/api/views/ykb6-ywnd/rows.csv?accessType=DOWNLOAD -O store.csv 
 
-nohup wget https://data.iowa.gov/api/views/gckp-fe7r/rows.csv?accessType=DOWNLOAD -O product.csv &
+wget https://data.iowa.gov/api/views/gckp-fe7r/rows.csv?accessType=DOWNLOAD -O product.csv 
 
-nohup wget https://data.iowa.gov/api/views/m3tr-qhgy/rows.csv?accessType=DOWNLOAD -O iowaliquor.csv &
+wget https://data.iowa.gov/api/views/m3tr-qhgy/rows.csv?accessType=DOWNLOAD -O iowaliquor.csv 
 
 
 #date fix
