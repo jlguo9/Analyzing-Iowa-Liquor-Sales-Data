@@ -10,6 +10,8 @@ import sys
 
 # flush the data to intermediate csv and fed it into data cleanng pipeline
 def data_action(lst, channel, output):
+    if len(lst) == 0:
+        return
     data = pd.DataFrame.from_records(lst)
     itermediate_file = "./"+channel+"_tmp.csv"
     data.to_csv(itermediate_file)
