@@ -42,8 +42,16 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     In order to facilitate analysis and remove redundant and erroneous data, we use the official store table and product table to replace the original data(by drop the columns from iowa-liquor). In this way, while proofreading the data, it also normalizes the data. After solving all the mentioned problems, the data becomes three tables of sale, store and product. Each table can be updated individually via Kafka in real-time. It is convenient for subsequent analysis and mining.
 
+2. **Overview of History Sale Data and Its Trend**
 
-2. **Some Questions we intend to answer**
+    Before we dive into any deeper analysis, we would like to have an overview of the history sale data, and see whether there is a particular pattern of how the total sale changes.
+
+    By using Spark we aggregated the sales data by year and month, and we found there obviously is a pattern: the amount of sale changes in similar way within each year, and the overall trend is steadily increasing.
+
+    Check More Details here: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Overview_Sale_By_Month#overview-of-history-sale-data-and-its-trend)
+
+
+3. **Some Questions we intend to answer**
 
     [**Question 1.**](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/growth_rate#variance-of-growth-rate-under-different-market-segmentation)
     
