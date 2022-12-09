@@ -1,6 +1,6 @@
 # <u> CMPT 732 Big Data Project Report</u>
 
-## Problem definition: 
+## Problem Definition: 
 *What is the problem that you are trying to solve? What are the challenges of this problem?*
 
 
@@ -35,16 +35,16 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     In order to facilitate analysis and remove redundant and erroneous data, we use the official store table and product table to replace the original data(by drop the columns from iowa-liquor). In this way, while proofreading the data, it also normalizes the data. After solving all the mentioned problems, the data becomes three tables of sale, store and product. Each table can be updated individually via Kafka in real-time. It is convenient for subsequent analysis and mining.
 
-2. **Overview of History Sale Data and Its Trend**
+2. **Overview of Historical Sales Data and Its Trend**
 
-    Before we dive into any deeper analysis, we would like to have an overview of the history sale data, and see whether there is a particular pattern of how the total sale changes.
+    Before we dive into any deeper analysis, we would like to have an overview of the historical sales data, and see whether there is a particular pattern of how the total sale changes.
 
     By using Spark we aggregated the sales data by year and month, and we found there obviously is a pattern: the amount of sale changes in similar way within each year, and the overall trend is steadily increasing.
 
     Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Overview_Sale_By_Month#overview-of-history-sale-data-and-its-trend)
 
 
-3. **Some Questions we intend to answer**
+3. **Some Questions We Intend to Answer**
 
     [**Question 1.**](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q1_Growth_Rate#variance-of-growth-rate-under-different-market-segmentation)
     
@@ -77,7 +77,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
     One of the fist issues we faced was loading and analysing the main table present in the database. As it contained only one table that too with 23 columns, it was a little difficult to fully understand the data before we perform any sort of analysis on it. Therefore, we normalized the data into 3 tables sales, store and product which can be consumed individually real-time, and is convenient for subsequent analysis and mining. 
 
 - ### Dealing with New Data
-   In this project we are analysing the old historic data to analyse the past trends regarding the sales of the product. But what about the new data which keeps getting generated everyday. Let's say we run this analysis after a week we might want to consider the last week's data as well in that analysis and for that we cannot clear and reload the whole database. Therefore, we added a script for Kafka streaming which would keep checking the data-set website every night and if it finds a new range of data it streams the data using **Kafka** and updates/appends our database with new rows, which can be used in next analysis.
+   In this project we are analysing the old historical data to analyse the past trends regarding the sales of the product. But what about the new data which keeps getting generated everyday. Let's say we run this analysis after a week we might want to consider the last week's data as well in that analysis and for that we cannot clear and reload the whole database. Therefore, we added a script for Kafka streaming which would keep checking the data-set website every night and if it finds a new range of data it streams the data using **Kafka** and updates/appends our database with new rows, which can be used in next analysis.
 
 
 ## Results: 
@@ -89,7 +89,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q1_Growth_Rate#results)
 
-- Problem 2: Describe and Classify the current stores with respect to  using RFM model
+- Problem 2: Describe and Classify the Current Stores with Respect to Using RFM Model
 
     Through analysis, we found that traditional retail analysis methods can be used to analyze merchants.
 At the same time, we found that the features obtained by using RFM can classify merchants very well.
@@ -99,7 +99,7 @@ Using this conclusion, we can help merchants make better site selection, and at 
     Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q2_RFM_Cluster#result)
 
 
-- Problem 3: Describe and Classify the store using RFM model
+- Problem 3: Describe and Classify the Store Using RFM Model
 
     For the period (30/07/2022 - 30/10/2022), We found that Products like "HA last drop Scotch" and "Remy Martin  Louis" can give profit upto **USD 1000** per bottle. selling just 100s of these bottles can give profit of atleast **USD 100,000** in just 3 months.
 
