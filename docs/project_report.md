@@ -46,7 +46,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
 3. **Some Questions we intend to answer**
 
-    [**Question 1.**](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/growth_rate#variance-of-growth-rate-under-different-market-segmentation)
+    [**Question 1.**](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q1_Growth_Rate#variance-of-growth-rate-under-different-market-segmentation)
     
     **(a)** Market can be segmented in different ways, for example: by cities, mid-to-high-end liquors, liquor categories, and so on; sales growth rate of market segments under each of these scenarios may have different distributions. We would like to explore which of the scenarios can divide the market most effectively, that is, to reveal the variantion of different market segments, so that vendors can know what to take into consideration when they want to expand their business
 
