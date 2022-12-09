@@ -50,7 +50,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     **(b)** Inverted display of data under significantly weighted features/combinations
 
-    **Question 2.** 
+    [**Question 2.**](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q2_RFM_Cluster#describe-and-classify-the-store-using-rfm-model)
 
     **(a)** Clustering based upon Geographical location i.e. either based on Gps coordinates or zipcodes.
 
@@ -77,6 +77,23 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
 ## Results: 
 *What are the outcomes of the project? What did you learn from the data analysis? What did you learn from the implementation?*
+
+- Problem 1: Variance of Growth Rate under Different Market Segmentation
+
+    More Details: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q1_Growth_Rate#results)
+
+- Problem 2: Describe and Classify the store using RFM model
+
+    More Details: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q2_RFM_Cluster#result)
+
+
+- Problem 3: Describe and Classify the store using RFM model
+
+    We found that Products like "HA last DROP Scotch" and "Remy Martin Louis" can give profit upto USD 1000 per bottle.
+And selling just 100s of these bottles can give profit of atleast USD 100,000 in just 6 months.
+More Details: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q3_Optimization_problem#results)
+
+
 
 
 ## [Project Summary](https://coursys.sfu.ca/2022fa-cmpt-732-g1/pages/ProjectSummary): 
