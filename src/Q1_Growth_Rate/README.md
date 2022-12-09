@@ -56,17 +56,14 @@ All the indicators are appended to a list and then we use the list to create the
 Here are the variances of growth rates under different segmentation scenarios. The values have been scaled by log so that the graph won't be horizontally too long.
 
 ![](./graphs/var.png)
-<center>Figure 1.1 Variance</center>
 
 From the bar chart we can see that using a single feature as the segmentation scenario usually won't incur a large variation among different segments. This may because such a segmentation scenario is too general that the resultant market segments are high-level and may be all growing or declining. The most effective scenario for single feature is "city". This can also be proven by looking into the max, mean, and min bar chart below: there are cities with booming liquor market and also cities with dismal liquor market.
 
 The segmentation scenario that causes the largest variance is "city + category + grade", with one segment growing super fast (see Jupyter Notebook for details), some growing fast, and some declining fast. Other several scenarios on its heels also performs well, effectively identifying growing and declining market segments. Vendors should definitly take the top several scenarios into consideration and get a look in depth into different segments under them.
 
 ![](./graphs/mean_max.png)
-<center>Figure 1.2 Mean and Max</center>
 
 ![](./graphs/min.png)
-<center>Figure 1.3 Min</center>
 
 The min graph is seperated from mean_max graph because there are many negative values in this graph, which can be easily overwhelmed when putting with max together. 
 
