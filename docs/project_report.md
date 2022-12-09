@@ -1,19 +1,12 @@
-# <u> CMPT 732 Big Data Project Report</u>
+# <u> CMPT 732 Big Data Project Report</u> -> [Link](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/project_report)
 
 ## Problem definition: 
 *What is the problem that you are trying to solve? What are the challenges of this problem?*
 
 
-When any business owner decides to open a new store(or expanding an existing business) at new city or a new neighbourhood, It can be challenging for business owners to decide on the best location for their stores so that they can make more profits.
-Not only that, a few more questions arise such as
+When any business owner decides to open a new store(or expanding an existing business) at new city or a new neighbourhood, It can be challenging for business owners to decide on the best location/products for their stores so that they can make more profits.
 
-- How are the sales of specific products of their domain?
-- How much revenue does other business in same domian make?
-- What products drives the most sales?
-- What are the most popular products among different regions of the city they plan to expand or open their business in?
-- Are there any seasonal changes in how products are consumed? 
-
-*and more...*
+Also, when a Vendor salesmen approach business owners  asking them to keep/sell their products. A good analysis is need to check how theses products are doing in the market for that city.
 
 Analysis on above questions is necessary to take decisions such as the optimal location for their business,  what products they will sell, and how to increase sales when starting a new or
 expanding an existing business in a new city.
@@ -78,7 +71,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 *What problems did you encounter while attacking the problem? How did you solve them?*
 
 - ### Analysing the Big Table
-    One of the fist issues we faced was loading and analysing the main table present in the database. As it contained only one table that too with 23 columns, it was a little difficult to fully understand the data before we perform any sort of analysis on it.
+    One of the fist issues we faced was loading and analysing the main table present in the database. As it contained only one table that too with 23 columns, it was a little difficult to fully understand the data before we perform any sort of analysis on it. Therefore, we normalized the data into 3 tables sales, store and product which can be consumed individually real-time, and is convenient for subsequent analysis and mining. 
 
 - ### Dealing with New Data
    In this project we are analysing the old historic data to analyse the past trends regarding the sales of the product. But what about the new data which keeps getting generated everyday. Let's say we run this analysis after a week we might want to consider the last week's data as well in that analysis and for that we cannot clear and reload the whole database. Therefore, we added a script for Kafka streaming which would keep checking the data-set website every night and if it finds a new range of data it streams the data using **Kafka** and updates/appends our database with new rows, which can be used in next analysis.
@@ -87,13 +80,13 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 ## Results: 
 *What are the outcomes of the project? What did you learn from the data analysis? What did you learn from the implementation?*
 
-- Problem 1: Variance of Growth Rate under Different Market Segmentation
+- Problem 1: What Are the Most Effective Market Segmentation Scenarios?
 
     Using a single feature as the segmentation scenario usually won't incur a large variation among different segments. The segmentation scenario that causes the largest variance is "city + category + grade", while other several scenarios followed closely behind also performe well. Vendors should take the top several scenarios into consideration and get a look in depth into different segments under them.
 
     Check More Details here: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q1_Growth_Rate#results)
 
-- Problem 2: Describe and Classify the store using RFM model
+- Problem 2: Describe and Classify the current stores with respect to  using RFM model
 
     Check More Details here: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q2_RFM_Cluster#result)
 
@@ -122,5 +115,5 @@ And selling just 100s of these bottles can give profit of atleast USD 100,000 in
 - Visualization: Visualization of analysis results.
       * We used Matplotlib python package and Orange Data Mining to plot a lot of charts to demonstrate the result of our analysis, such as scatter plot, bar charts and line charts.Instances of these can be found in the report and "README.md" of each problem
 - Technologies: New technologies learned as part of doing the project. 
-    * A few technologies we learned and used while completing this project are Orange Data Mining, Amazon S3, Python Spark, Amazon AWS EC2, Matplotlib, Github Pages, Kafka streaming, Parquet file format
+    * A few technologies we learned and used while completing this project are Orange Data Mining, Amazon S3, Python Spark, Amazon AWS EC2, Socrata, Matplotlib, Github Pages, Kafka streaming, Parquet file format
 
