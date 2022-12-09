@@ -7,7 +7,8 @@ from sodapy import Socrata
 from datetime import datetime, timedelta
 import time
 
-from kafka import KafkaProducer
+from kafka import KafkaProducer, KafkaAdminClient
+from kafka.admin import NewTopic
 import threading
 
 # load_updates function loads new data from last_update_date
@@ -110,6 +111,22 @@ def check_product(producer, last_update_date):
 
 
 def main(last_update_date):
+    try:
+        admin = KafkaAdminClient(bootstrap_servers='localhost:9092')
+
+        sale_topic = NewTopic(name='sale',
+                        num_partitions=1,
+                        replication_factor=1)
+        store_topic = NewTopic(name='store',
+                        num_partitions=1,
+                        replication_factor=1)
+        product_topic = NewTopic(name='product',
+                        num_partitions=1,
+                        replication_factor=1)
+        admin.create_topics([sale_topic,store_topic,product_topic])
+    except Exception:
+        pass
+
     # initialize kafka producer
     producer = KafkaProducer(bootstrap_servers=['node1.local:9092', 'node2.local:9092'])
 
@@ -122,9 +139,9 @@ def main(last_update_date):
     product_thread.start()
 
     # (for debugging) stop the threads
-    # sale_thread.do_run = False
-    # store_thread.do_run = False
-    # product_thread.do_run = False
+    sale_thread.do_run = False
+    store_thread.do_run = False
+    product_thread.do_run = False
 
     
 if __name__ == '__main__':
