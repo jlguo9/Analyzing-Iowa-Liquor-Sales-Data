@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.VectorAssembler","timestamp":1670543568211,"sparkVersion":"3.2.2","uid":"VectorAssembler_77f4187bf317","paramMap":{"outputCol":"feature","inputCols":["year","month","last_year_sale"]},"defaultParamMap":{"handleInvalid":"error","outputCol":"VectorAssembler_77f4187bf317__output"}}
