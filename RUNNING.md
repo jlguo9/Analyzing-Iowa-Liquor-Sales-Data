@@ -8,7 +8,9 @@ This is the producer of Kafka.
 
 This is the consumer of Kafka
 
-    $ nohup ./src/Data_Collecting/apply_update.py &
+    $ nohup ./src/Data_Collecting/apply_update.py <output> &
+    
+where "output" is the path of the location where the newly collected data will be updated to
 
 ## total_sales_by_month.py
     
