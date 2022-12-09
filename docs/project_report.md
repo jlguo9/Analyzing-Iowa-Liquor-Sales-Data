@@ -54,9 +54,9 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     [**Question 2.**](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q2_RFM_Cluster#describe-and-classify-the-store-using-rfm-model)
 
-    **(a)** Clustering based upon Geographical location i.e. either based on Gps coordinates or zipcodes.
+    **(a)** Use the RFM method to model merchants and generate features based on the results.
 
-    **(b)** Correlation analysis (coeff -1 ～ 1), to explore substitutes and complements (store level)
+    **(b)** Use the kmeans method to classify merchants and use geographic coordinates to observe whether the classification results are geographically meaningful
 
     [**Question 3.**](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q3_Optimization_problem#optimizing-profit)
 
