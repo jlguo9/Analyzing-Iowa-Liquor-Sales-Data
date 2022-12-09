@@ -1,6 +1,6 @@
-# Overview of History Sale Data and Its Trend
+# Overview of Historical Sales Data and Its Trend
 
-Before we dive into any deeper analysis, we would like to have an overview of the history sale data, and see whether there is a particular pattern of how the total sale changes.
+Before we dive into any deeper analysis, we would like to have an overview of the historical sale data, and see whether there is a particular pattern of how the total sale changes.
 
 By using Spark to aggregate the sale by year and month, the below curve can be plotted:
 
