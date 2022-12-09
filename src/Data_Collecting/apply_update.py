@@ -35,14 +35,17 @@ def sale(topic,output):
         for msg in consumer:
             lst.append(msg.value)
             cur_time = time.time()
-            # flush the data every 10 seconds
-            if int(cur_time - start_time)==10:
+            # flush the data every 5 minutes 
+            if int(cur_time - start_time)==300 and len(lst) != 0:
                 data_action(lst,"sale",output)
                 start_time = cur_time
                 lst.clear()
             # check stop signal
             if getattr(t, "do_run", False):
                 break
+        # flush the remaining data before close
+        if len(lst) != 0:
+            data_action(lst,"sale",output)
     consumer.close()
     print("sale consumer closed")
 
@@ -64,14 +67,17 @@ def store(topic,output):
         for msg in consumer:
             lst.append(msg.value)
             cur_time = time.time()
-            # flush the data every 10 seconds
-            if int(cur_time - start_time)==10:
+            # flush the data every 5 minutes 
+            if int(cur_time - start_time)==300 and len(lst) != 0:
                 data_action(lst,"store",output)
                 start_time = cur_time
                 lst.clear()
             # check stop signal
             if getattr(t, "do_run", False):
                 break
+        # flush the remaining data before close
+        if len(lst) != 0:
+            data_action(lst,"sale",output)
     consumer.close()
     print("store consumer closed")
     
@@ -93,14 +99,17 @@ def product(topic,output):
         for msg in consumer:
             lst.append(msg.value)
             cur_time = time.time()
-            # flush the data every 10 seconds
-            if int(cur_time - start_time)==10:
+            # flush the data every 5 minutes 
+            if int(cur_time - start_time)==300 and len(lst) != 0:
                 data_action(lst,"product",output)
                 start_time = cur_time
                 lst.clear()
             # check stop signal
             if getattr(t, "do_run", False):
                 break
+        # flush the remaining data before close
+        if len(lst) != 0:
+            data_action(lst,"sale",output)
     consumer.close()
     print("product consumer closed")
 
