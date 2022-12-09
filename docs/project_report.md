@@ -80,18 +80,21 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
 - Problem 1: Variance of Growth Rate under Different Market Segmentation
 
-    More Details: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q1_Growth_Rate#results)
+    Using a single feature as the segmentation scenario usually won't incur a large variation among different segments. The segmentation scenario that causes the largest variance is "city + category + grade", while other several scenarios followed closely behind also performe well. Vendors should take the top several scenarios into consideration and get a look in depth into different segments under them.
+
+    Check More Details here: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q1_Growth_Rate#results)
 
 - Problem 2: Describe and Classify the store using RFM model
 
-    More Details: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q2_RFM_Cluster#result)
+    Check More Details here: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q2_RFM_Cluster#result)
 
 
 - Problem 3: Describe and Classify the store using RFM model
 
     We found that Products like "HA last DROP Scotch" and "Remy Martin Louis" can give profit upto USD 1000 per bottle.
-And selling just 100s of these bottles can give profit of atleast USD 100,000 in just 6 months.
-More Details: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q3_Optimization_problem#results)
+And selling just 100s of these bottles can give profit of atleast USD 100,000 in just 3 months.
+
+    Check More Details here: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q3_Optimization_problem#results)
 
 
 
