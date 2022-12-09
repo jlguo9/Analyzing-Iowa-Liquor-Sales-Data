@@ -24,7 +24,7 @@ where "inputs" is the path of sales table in csv format, and "output" is the pat
 
 where "inputs" is the output of total_sales_by_month.py, "modelfile" is the path of location where you want the model files to be stored, and "output" is the path of location where the predicted sales will be stored
 
-## variance.py
+## variance.py -- Q1
 
     $ spark-submit ./src/Q1_Growth_Rate/variance.py <inputs> <output>
 
@@ -34,3 +34,10 @@ and "outputs" is the path of location where the output files will be stored. The
 under which growth rate of each segment are stored under a folder named by the corresponding scenario.
 2. the final resultant DataFrame containing variance, mean, max, min of each scenario
 
+
+## optimization_problem.py -- Q3
+
+    $ spark-submit ./src/Q3_Optimization_problem/optimization_problem.py <input_1> <input_2>../../../project_data/testsale ../../../project_data/product
+
+
+where "input_1" is the path to (normalized) folder which contains sales data(in parquet files) and "input_2" is the path to folder which contains product data
