@@ -1,4 +1,4 @@
-# <u> CMPT 732 Big Data Project Report</u> -> [Link](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/project_report)
+# <u> CMPT 732 Big Data Project Report</u>
 
 ## Problem definition: 
 *What is the problem that you are trying to solve? What are the challenges of this problem?*
@@ -41,24 +41,24 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     By using Spark we aggregated the sales data by year and month, and we found there obviously is a pattern: the amount of sale changes in similar way within each year, and the overall trend is steadily increasing.
 
-    Check More Details here: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Overview_Sale_By_Month#overview-of-history-sale-data-and-its-trend)
+    Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Overview_Sale_By_Month#overview-of-history-sale-data-and-its-trend)
 
 
 3. **Some Questions we intend to answer**
 
-    [**Question 1.**](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/growth_rate#variance-of-growth-rate-under-different-market-segmentation)
+    [**Question 1.**](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q1_Growth_Rate#variance-of-growth-rate-under-different-market-segmentation)
     
-    **(a)** Many features and their combinations(For example: cities, mid-to-high-end wines, wine categories） can have an impact on the sales growth rate. We would like to explore which of them have significant impact on sales so that people can know what they should take into consideration when they want to explore potential market segmentation.
+    **(a)** Market can be segmented in different ways, for example: by cities, mid-to-high-end liquors, liquor categories, and so on; sales growth rate of market segments under each of these scenarios may have different distributions. We would like to explore which of the scenarios can divide the market most effectively, that is, to reveal the variantion of different market segments, so that vendors can know what to take into consideration when they want to expand their business
 
-    **(b)** Inverted display of data under significantly weighted features/combinations
+    **(b)** Display growth rate distributions under the Top 5 segmentation scenarios
 
-    [**Question 2.**](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q2_RFM_Cluster#describe-and-classify-the-store-using-rfm-model)
+    [**Question 2.**](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q2_RFM_Cluster#describe-and-classify-the-store-using-rfm-model)
 
     **(a)** Clustering based upon Geographical location i.e. either based on Gps coordinates or zipcodes.
 
     **(b)** Correlation analysis (coeff -1 ～ 1), to explore substitutes and complements (store level)
 
-    [**Question 3.**](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q3_Optimization_problem#optimizing-profit)
+    [**Question 3.**](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q3_Optimization_problem#optimizing-profit)
 
      Assuming that the capital at hand is certain, how can we try to maximize the profit? I.e.  finding Capital turnover rate /Wine inventory which means The more frequently you buy, the higher the capital turnover rate (Optimization problem)
 
@@ -84,11 +84,16 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     Using a single feature as the segmentation scenario usually won't incur a large variation among different segments. The segmentation scenario that causes the largest variance is "city + category + grade", while other several scenarios followed closely behind also performe well. Vendors should take the top several scenarios into consideration and get a look in depth into different segments under them.
 
-    Check More Details here: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q1_Growth_Rate#results)
+    Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q1_Growth_Rate#results)
 
 - Problem 2: Describe and Classify the current stores with respect to  using RFM model
 
-    Check More Details here: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q2_RFM_Cluster#result)
+    Through analysis, we found that traditional retail analysis methods can be used to analyze merchants.
+At the same time, we found that the features obtained by using RFM can classify merchants very well.
+These classifications directly reflect the simple and direct business logic on the map. Good businesses are located in densely populated areas with convenient transportation and are relatively concentrated.
+Using this conclusion, we can help merchants make better site selection, and at the same time, for winery sales staff, they can also help them better locate the top customer groups.
+
+    Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q2_RFM_Cluster#result)
 
 
 - Problem 3: Describe and Classify the store using RFM model
@@ -96,7 +101,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
     We found that Products like "HA last DROP Scotch" and "Remy Martin Louis" can give profit upto USD 1000 per bottle.
 And selling just 100s of these bottles can give profit of atleast USD 100,000 in just 3 months.
 
-    Check More Details here: [README.md](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q3_Optimization_problem#results)
+    Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q3_Optimization_problem#results)
 
 
 

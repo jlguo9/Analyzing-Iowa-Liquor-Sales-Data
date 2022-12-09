@@ -67,7 +67,7 @@ The segmentation scenario that causes the largest variance is "city + category +
 
 The min graph is seperated from mean_max graph because there are many negative values in this graph, which can be easily overwhelmed when putting with max together. 
 
-To help vendors get more insights, the intermediate DataFrames (containing growth rates of each segment under each scenario, divided into different folders by scenario) are kept, and we provide a Jupyter Notebook method to visualize them (see [**plot_growth.ipynb**]("https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/blob/main/src/Q1_Growth_Rate/plot_growth.ipynb"))
+To help vendors get more insights, the intermediate DataFrames (containing growth rates of each segment under each scenario, divided into different folders by scenario) are kept, and we provide a Jupyter Notebook method to visualize them (see [**plot_growth.ipynb**](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/blob/main/src/Q1_Growth_Rate/plot_growth.ipynb))
 
 
 
