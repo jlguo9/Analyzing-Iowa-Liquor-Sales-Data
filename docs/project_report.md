@@ -126,3 +126,6 @@ Using this conclusion, we can help merchants make better site selection, and at 
 - Technologies: New technologies learned as part of doing the project. 
     * A few technologies we learned and used while completing this project are Orange Data Mining, Amazon S3, Python Spark, Amazon AWS EC2, Socrata, Matplotlib, Github Pages, Kafka streaming, Parquet file format.
 
+
+Project Contributors: Song Lin (sla475, 301550328), Shlok Nangia (sna101, 301550257), Jialiang Guo (jga169, 301558771)
+
