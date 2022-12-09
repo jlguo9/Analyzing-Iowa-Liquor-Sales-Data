@@ -48,9 +48,9 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     [**Question 1.**](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/growth_rate#variance-of-growth-rate-under-different-market-segmentation)
     
-    **(a)** Many features and their combinations(For example: cities, mid-to-high-end wines, wine categories） can have an impact on the sales growth rate. We would like to explore which of them have significant impact on sales so that people can know what they should take into consideration when they want to explore potential market segmentation.
+    **(a)** Market can be segmented in different ways, for example: by cities, mid-to-high-end liquors, liquor categories, and so on; sales growth rate of market segments under each of these scenarios may have different distributions. We would like to explore which of the scenarios can divide the market most effectively, that is, to reveal the variantion of different market segments, so that vendors can know what to take into consideration when they want to expand their business
 
-    **(b)** Inverted display of data under significantly weighted features/combinations
+    **(b)** Display growth rate distributions under the Top 5 segmentation scenarios
 
     [**Question 2.**](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/src/Q2_RFM_Cluster#describe-and-classify-the-store-using-rfm-model)
 
