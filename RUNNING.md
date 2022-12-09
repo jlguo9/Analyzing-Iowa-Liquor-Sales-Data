@@ -73,7 +73,7 @@ under which growth rate of each segment are stored under a folder named by the c
 
 ## Q3: 
 
-###Running optimization_problem.py 
+### Running optimization_problem.py 
 
     $ spark-submit ./src/Q3_Optimization_problem/optimization_problem.py <input_1> <input_2>../../../project_data/testsale ../../../project_data/product
 
