@@ -32,7 +32,7 @@ def load_updates(last_update_date, site):
     results = client.get(site, where = select_statement, limit=5)    # limit=5 is for debugging. Remeber to remove it.
 
     if results:
-        print(results[0])   # for debugging
+        # print(results[0])   # for debugging
         return True, results
     else:
         return False, None

@@ -6,8 +6,6 @@ import threading
 import os
 import sys
 
-# from pyspark.sql import SparkSession, functions, types
-
 # flush the data to intermediate csv and fed it into data cleanng pipeline
 def data_action(lst, channel, output):
     if len(lst) == 0:
@@ -129,9 +127,5 @@ def main(output):
     product_thread.do_run = False
 
 if __name__ == '__main__':
-    # spark = SparkSession.builder.appName('Apply Update').getOrCreate()
-    # assert spark.version >= '3.0' # make sure we have Spark 3.0+
-    # spark.sparkContext.setLogLevel('WARN')
-    # sc = spark.sparkContext
     output = sys.argv[1]
     main(output)
