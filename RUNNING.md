@@ -75,7 +75,7 @@ where "saleData file" is the path of sale table in csv format, and "output" is t
 
     $ spark-submit ./src/Q2_RFM_Cluster/joinGeoRfm.py <storeData file> <RFM file> <output>
 	
-where "storeData file" is the path of store table in csv format, "RFM file" is the path of RFM file in csv format, and "output" is the path of location where you want the outputs to be stored. The output is RFM file combine with the geographic coordinates.
+where "storeData file" is the path of store table in parquet format, "RFM file" is the path of RFM file in csv format, and "output" is the path of location where you want the outputs to be stored. The output is RFM file combine with the geographic coordinates.
 
 ### Draw scatterplot with map
     $ nohup ./src/Q2_RFM_Cluster/DrawMap.py &
