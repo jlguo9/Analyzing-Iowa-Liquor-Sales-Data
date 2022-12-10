@@ -60,7 +60,7 @@ where "inputs" is the output of total_sales_by_month.py, "modelfile" is the path
 
     $ spark-submit ./src/Q1_Growth_Rate/variance.py <inputs> <output>
 
-where "inputs" is the path where there are three folders: sale, product, and store
+where "inputs" is the path where there are three folders: sale, product, and store. In this repo's case, it's the ./cleaned_data folder
 and "outputs" is the path of location where the output files will be stored. The output includes: 
 1. a folder named "growth_rate_tables"
 under which growth rate of each segment are stored under a folder named by the corresponding scenario.
