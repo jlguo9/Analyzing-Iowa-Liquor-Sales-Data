@@ -10,6 +10,8 @@ Repository Link: [https://github.sfu.ca/sna101/3_datamen_CMPT_732_project](https
 
 Running Instructions Link: [https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/RUNNING](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/RUNNING)
 
+Video Link: [https://www.youtube.com/watch?v=3TiFN772ZN0](https://www.youtube.com/watch?v=3TiFN772ZN0)
+
 Team Members:
 
 - Song Lin (301550328)
