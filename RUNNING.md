@@ -1,4 +1,6 @@
-## Downloading the Raw Data
+## Data Collecting
+
+### Downloading the Raw Data
 
     $ nohup wget https://data.iowa.gov/api/views/ykb6-ywnd/rows.csv?accessType=DOWNLOAD -O store.csv &
 
@@ -6,7 +8,7 @@
 
     $ nohup wget https://data.iowa.gov/api/views/m3tr-qhgy/rows.csv?accessType=DOWNLOAD -O iowaliquor.csv &
 
-## Fixing the Date column
+### Fixing the Date column
 
     $ sed -E "s#([0-9]{2})/([0-9]{2})/([0-9]{4})#\3-\1-\2#" < iowaliquor.csv | tr -d '$' > iowa-liquor-datefixed.csv
 
@@ -16,31 +18,34 @@
 
     $ sed -E "s#([0-9]{2})/([0-9]{2})/([0-9]{4})#\3-\1-\2#" < product-datefixed1.csv | tr -d '$' > product-datefixed.csv
 
-## Running the Data Cleaning Script
+### Running the Data Cleaning Script
     $ spark-submit ./src/Data_Collecting/dataclean.py <sale|product|store> <inputs> <output>
 
 
-## check_update.py
+### check_update.py
 
 This is the producer of Kafka.
 
     $ nohup ./src/Data_Collecting/check_update.py &
 
-## apply_update.py
+### apply_update.py
 
 This is the consumer of Kafka
 
     $ nohup ./src/Data_Collecting/apply_update.py <output> &
     
-where "output" is the path of the location where the newly collected data will be updated to
+where "output" is the path of the location where the newly collected data will be updated to.
+There is a timeout to stop the loop, which is for test/debugging use. Can be removed when put into use.
 
-## total_sales_by_month.py
+## Overview:
+
+### total_sales_by_month.py
     
     $ spark-submit ./src/Overview_Sale_By_Month/total_sales_by_month.py <inputs> <output>
 
 where "inputs" is the path of sales table in csv format, and "output" is the path of location where you want the outputs to be stored. The output is the aggregated sale data by month, which can be visualized and can also be fed into train_pref.py
 
-## train_pred.py
+### train_pred.py
 
     $ spark-submit ./src/Overview_Sale_By_Month/train_pred.py <inputs> <modelfile> <output>
 
