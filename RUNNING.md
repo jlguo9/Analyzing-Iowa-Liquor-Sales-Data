@@ -46,7 +46,7 @@ There is a timeout to stop the loop, which is for test/debugging use. Can be rem
     
     $ spark-submit ./src/Overview_Sale_By_Month/total_sales_by_month.py <inputs> <output>
 
-where "inputs" is the path of sales table in csv format, and "output" is the path of location where you want the outputs to be stored. The output is the aggregated sale data by month, which can be visualized and can also be fed into train_pref.py
+where "inputs" is the path of sales table, and "output" is the path of location where you want the outputs to be stored. The output is the aggregated sale data by month, which can be visualized and can also be fed into train_pref.py
 
 ### train_pred.py
 
