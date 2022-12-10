@@ -20,7 +20,8 @@
 
 ### Running the Data Cleaning Script
     $ spark-submit ./src/Data_Collecting/dataclean.py <sale|product|store> <inputs> <output>
-
+	
+where "sale|product|store" is the path of sale or product or stroe table in csv format, and "output" is the path of location where you want the outputs to be stored. The output is the data file after cleaning.
 
 ### check_update.py
 
@@ -68,10 +69,14 @@ under which growth rate of each segment are stored under a folder named by the c
 
     $ spark-submit ./src/Q2_RFM_Cluster/RFM.py <saleData file> <output>
 	
+where "saleData file" is the path of sale table in csv format, and "output" is the path of location where you want the outputs to be stored. The output is the store number with its RFM segmentation and score combined with the prediction cluster after using kmeans algorithm.
+
 ### Joining RFM with GEO data
 
-    $ spark-submit ./src/Q2_RFM_Cluster/joinGeoRfm.py <storeData file> <output>
+    $ spark-submit ./src/Q2_RFM_Cluster/joinGeoRfm.py <storeData file> <RFM file> <output>
 	
+where "storeData file" is the path of store table in csv format, "RFM file" is the path of RFM file in csv format, and "output" is the path of location where you want the outputs to be stored. The output is RFM file combine with the geographic coordinates.
+
 ### Draw scatterplot with map
     $ nohup ./src/Q2_RFM_Cluster/DrawMap.py &
 
