@@ -31,4 +31,4 @@ if __name__ == '__main__':
     assert spark.version >= '3.0' # make sure we have Spark 3.0+
     spark.sparkContext.setLogLevel('WARN')
     sc = spark.sparkContext
-    main(inputs,output)
+    main(input1,input2,output)
