@@ -23,7 +23,7 @@
 	
 where "sale|product|store" is the path of sale or product or stroe table in csv format, and "output" is the path of Hadoop/S3 where you want the outputs to be stored. The output is the data file after cleaning.
 
-<u>We have provided the output of the above scripts i.e. cleaned data in out repo inside ["cleaned_data"](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/cleaned_data) folder.</u>
+##### We have provided the output of the above scripts i.e. cleaned data in out repo inside ["cleaned_data"](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/cleaned_data) folder.
 
 ### check_update.py
 
@@ -46,7 +46,7 @@ There is a timeout to stop the loop, which is for test/debugging use. Can be rem
     
     $ spark-submit ./src/Overview_Sale_By_Month/total_sales_by_month.py <inputs> <output>
 
-where "inputs" is the path of sales table in csv format, and "output" is the path of location where you want the outputs to be stored. The output is the aggregated sale data by month, which can be visualized and can also be fed into train_pref.py
+where "inputs" is the path of sales table, and "output" is the path of location where you want the outputs to be stored. The output is the aggregated sale data by month, which can be visualized and can also be fed into train_pref.py
 
 ### train_pred.py
 
@@ -60,7 +60,7 @@ where "inputs" is the output of total_sales_by_month.py, "modelfile" is the path
 
     $ spark-submit ./src/Q1_Growth_Rate/variance.py <inputs> <output>
 
-where "inputs" is the path where there are three csv files: iowa-liquor-datefixed.csv, store-datefixed.csv, product-datefixed.csv
+where "inputs" is the path where there are three folders: sale, product, and store
 and "outputs" is the path of location where the output files will be stored. The output includes: 
 1. a folder named "growth_rate_tables"
 under which growth rate of each segment are stored under a folder named by the corresponding scenario.
@@ -87,7 +87,7 @@ where "storeData file" is the path of store table in parquet format, "RFM file" 
 
 ### Running optimization_problem.py 
 
-    $ spark-submit ./src/Q3_Optimization_problem/optimization_problem.py <input_1> <input_2>../../../project_data/testsale ../../../project_data/product
+    $ spark-submit ./src/Q3_Optimization_problem/optimization_problem.py <input_1> <input_2>
 
 
-where "input_1" is the path to (normalized) folder which contains sales data(in parquet files) and "input_2" is the path to folder which contains product data
+where "input_1" is the path to (normalized) folder which contains sales data(in parquet files) i.e. "./cleaned_data/sale" and "input_2" is the path to folder which contains product data i.e. "./cleaned_data/product". And the output images will be generated in folder "./Q3_Optimization_problem/"

@@ -9,7 +9,7 @@ spark.sparkContext.setLogLevel('WARN')
 assert spark.version >= '2.4' # make sure we have Spark 2.4+
 
 def main(inputs, outputs):
-    data = spark.read.options(header='True', inferSchema='True', delimiter=',').csv(inputs) \
+    data = spark.read.options(header='True', inferSchema='True', delimiter=',').parquet(inputs) \
         .select(functions.col("Date").alias('date'), functions.col("Sale (Dollars)").alias('sale'))
     # extract year and month from date
     year_month = data.withColumn("year", functions.year(data['date'])) \

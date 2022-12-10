@@ -69,7 +69,7 @@ def divide(val, col, low, high):
 
 def load_product(inputs):
     # load and extract features for product data
-    product = spark.read.options(header='True').csv(inputs+"/product-datefixed.csv", schema=product_schema) \
+    product = spark.read.options(header='True').csv(inputs+"/product/product-datefixed.csv", schema=product_schema) \
         .select('Item Number', 'Category Name', 'State Bottle Cost', 'Bottle Volume (ml)') \
         .cache()
     # divide the product into different bottle size
@@ -102,7 +102,7 @@ def load_product(inputs):
 
 def load_sale(inputs):
     # load and extract features from sale data
-    sale = spark.read.options(header='True', inferSchema='True', delimiter=',').csv(inputs+"/iowa-liquor-datefixed.csv") \
+    sale = spark.read.options(header='True', inferSchema='True', delimiter=',').parquet(inputs+"/sale") \
         .select('Date', 'Sale (Dollars)', 'Store Number', 'Item Number')
 
     cur_year = datetime.date.today().year
@@ -110,7 +110,7 @@ def load_sale(inputs):
         .select('Year','Sale (Dollars)','Store Number','Item Number')
     selected = date_to_year.where((date_to_year['Year'] >= cur_year-4) & (date_to_year['Year'] <= cur_year-1) )
 
-    store = spark.read.options(header='True').csv(inputs+"/store-datefixed.csv", schema = store_schema) \
+    store = spark.read.options(header='True').parquet(inputs+"/store") \
         .select('Store', 'City')
     with_city = selected.join(store, selected['Store Number']==store['Store']) \
         .select(selected['Year'],selected['Sale (Dollars)'],selected['Item Number'],store['City'])
