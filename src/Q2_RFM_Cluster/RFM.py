@@ -191,7 +191,7 @@ def main(inputs,output):
     
 if __name__ == '__main__':
     inputs = sys.argv[1] #parquet
-    output = sys.argv[2] #parquet
+    output = sys.argv[2] #csv
     spark = SparkSession.builder.appName('RFM code').getOrCreate()
     assert spark.version >= '3.0' # make sure we have Spark 3.0+
     spark.sparkContext.setLogLevel('WARN')

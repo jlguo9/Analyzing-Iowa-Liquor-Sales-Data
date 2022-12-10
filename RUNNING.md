@@ -21,7 +21,7 @@
 ### Running the Data Cleaning Script
     $ spark-submit ./src/Data_Collecting/dataclean.py <sale|product|store> <inputs> <output>
 	
-where "sale|product|store" is the path of sale or product or stroe table in csv format, and "output" is the path of location where you want the outputs to be stored. The output is the data file after cleaning.
+where "sale|product|store" is the path of sale or product or stroe table in csv format, and "output" is the path of Hadoop/S3 where you want the outputs to be stored. The output is the data file after cleaning.
 
 ##### We have provided the output of the above scripts i.e. cleaned data in out repo inside ["cleaned_data"](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/cleaned_data) folder.
 
@@ -60,8 +60,8 @@ where "inputs" is the output of total_sales_by_month.py, "modelfile" is the path
 
     $ spark-submit ./src/Q1_Growth_Rate/variance.py <inputs> <output>
 
-where "inputs" is the path where there are three csv files: iowa-liquor-datefixed.csv, store-datefixed.csv, product-datefixed.csv
-and "outputs" is the path of location where the output files will be stored. The output includes: 
+where "inputs" is the path where there are three folders: sale, product, and store. In this repo's case, it's the ./cleaned_data folder. 
+"outputs" is the path of location where the output files will be stored. The output includes: 
 1. a folder named "growth_rate_tables"
 under which growth rate of each segment are stored under a folder named by the corresponding scenario.
 2. the final resultant DataFrame containing variance, mean, max, min of each scenario
@@ -71,16 +71,17 @@ under which growth rate of each segment are stored under a folder named by the c
 
     $ spark-submit ./src/Q2_RFM_Cluster/RFM.py <saleData file> <output>
 	
-where "saleData file" is the path of sale table in csv format, and "output" is the path of location where you want the outputs to be stored. The output is the store number with its RFM segmentation and score combined with the prediction cluster after using kmeans algorithm.
+where "saleData file" is the path of sale table in parquet format, and "output" is the path of location where you want the outputs to be stored. The output is the store number with its RFM segmentation and score combined with the prediction cluster after using kmeans algorithm.
 
 ### Joining RFM with GEO data
 
     $ spark-submit ./src/Q2_RFM_Cluster/joinGeoRfm.py <storeData file> <RFM file> <output>
 	
-where "storeData file" is the path of store table in parquet format, "RFM file" is the path of RFM file in csv format, and "output" is the path of location where you want the outputs to be stored. The output is RFM file combine with the geographic coordinates.
+where "storeData file" is the path of store table in parquet format, "RFM file" is the path of RFM file in csv format, and "output" is the path of Hadoop/s3 where you want the outputs to be stored. The output is RFM file combine with the geographic coordinates.
 
 ### Draw scatterplot with map
-    $ nohup ./src/Q2_RFM_Cluster/DrawMap.py &
+    $ nohup ./src/Q2_RFM_Cluster/DrawMap.py <inputs> &
+where "inputs" is the path of RFM modle with GEO in csv format
 
 
 ## Q3: 
