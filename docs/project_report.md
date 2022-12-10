@@ -35,7 +35,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     In order to facilitate analysis and remove redundant and erroneous data, we used the official store table and product table to replace the original data(by dropping the columns from original Table). In this way, while proofreading the data, it also normalized the data. After solving all the mentioned problems, the data normalizes into three tables namely sale, store and product. Each table can be updated individually via Kafka in real-time. It is convenient for subsequent analysis and mining.
 
-    Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Data_Collecting/)
+    [Check More Details here](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Data_Collecting/)
 
 2. #### Overview of Historical Sales Data and Its Trend
 
@@ -43,7 +43,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     By using Spark we aggregated the sales data by year and month, and we found there obviously is a pattern: the amount of sale changes in similar way within each year, and the overall trend is steadily increasing.
 
-    Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Overview_Sale_By_Month#overview-of-history-sale-data-and-its-trend)
+    [Check More Details here](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Overview_Sale_By_Month#overview-of-history-sale-data-and-its-trend)
 
 
 3. #### Some Questions We Intend to Answer
@@ -89,7 +89,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     Using a single feature as the segmentation scenario usually won't incur a large variation among different segments. The segmentation scenario that causes the largest variance is "city + category + grade", while other several scenarios followed closely behind also performe well. Vendors should take the top several scenarios into consideration and get a look in depth into different segments under them.
 
-    Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q1_Growth_Rate#results)
+    [Check More Details here](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q1_Growth_Rate#results)
 
 - Problem 2: Describe and Classify the Current Stores with Respect to Using RFM Model
 
@@ -98,7 +98,7 @@ At the same time, we found that the features obtained by using RFM can classify 
 These classifications directly reflect the simple and direct business logic on the map. Good businesses are located in densely populated areas with convenient transportation and are relatively concentrated.
 Using this conclusion, we can help merchants make better site selection, and at the same time, for winery sales staff, they can also help them better locate the top customer groups.
 
-    Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q2_RFM_Cluster#result)
+    [Check More Details here](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q2_RFM_Cluster#result)
 
 
 - Problem 3: Optimizing Profit
@@ -107,7 +107,7 @@ Using this conclusion, we can help merchants make better site selection, and at 
 
     Also, it looks like irrespective of the price, "Remy Martin  Louis" appears in top 5 products for all 3 quarters which means it has been all time favourite as the same time it has maximum profit margin for business owners. Therefore, it looks like the best product to invest in.
 
-    Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q3_Optimization_problem#results)
+    [Check More Details here](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q3_Optimization_problem#results)
 
 
 
