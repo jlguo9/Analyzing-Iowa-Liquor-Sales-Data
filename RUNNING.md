@@ -80,7 +80,8 @@ where "saleData file" is the path of sale table in parquet format, and "output" 
 where "storeData file" is the path of store table in parquet format, "RFM file" is the path of RFM file in csv format, and "output" is the path of Hadoop/s3 where you want the outputs to be stored. The output is RFM file combine with the geographic coordinates.
 
 ### Draw scatterplot with map
-    $ nohup ./src/Q2_RFM_Cluster/DrawMap.py &
+    $ nohup ./src/Q2_RFM_Cluster/DrawMap.py <inputs> &
+where "inputs" is the path of RFM modle with GEO in csv format
 
 
 ## Q3: 
