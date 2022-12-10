@@ -31,9 +31,9 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     The Iowa Alcoholic Beverages Division receives reports on wholesale transactions, and they make the data (from 2012 to the present) accessible at: [https://data.iowa.gov/](https://data.iowa.gov/Sales-Distribution/Iowa-Liquor-Sales/m3tr-qhgy).
 
-    For the main data source is a 5.7 GB file iowa-liquor. Through analysis, we found that this table contains store information, product information and transaction information. Among them, there are a lot of redundant and wrong data in the store data, such as information loss, multiple names for the same store, etc. In addition, the geographical location is stored as coordinate point data instead of latitude and longitude, and there are errors in the date format. 
+    The iowa-liquor dataset is a 5.7 GB file. Through analysis, we found that this table contains store information, product information and transaction information. Among them, there are a lot of redundant and wrong stores data, such as incomplete names, multiple names for the same store, etc. In addition, the geographical location is stored as coordinate point data instead of latitude and longitude, and there are errors in the date format. 
 
-    In order to facilitate analysis and remove redundant and erroneous data, we use the official store table and product table to replace the original data(by drop the columns from iowa-liquor). In this way, while proofreading the data, it also normalizes the data. After solving all the mentioned problems, the data becomes three tables of sale, store and product. Each table can be updated individually via Kafka in real-time. It is convenient for subsequent analysis and mining.
+    In order to facilitate analysis and remove redundant and erroneous data, we used the official store table and product table to replace the original data(by dropping the columns from original Table). In this way, while proofreading the data, it also normalized the data. After solving all the mentioned problems, the data normalizes into three tables namely sale, store and product. Each table can be updated individually via Kafka in real-time. It is convenient for subsequent analysis and mining.
 
     Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Data_Collecting/)
 
@@ -117,8 +117,9 @@ Using this conclusion, we can help merchants make better site selection, and at 
 
 
 - Getting the data: Acquiring/gathering/downloading. 
-    * We wrote a script to gather and download thi
-- ETL: Extract-Transform-Load work and cleaning the data set.
+    * [Data Acquiring](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/docs/project_report#brief-on-data-acquiring-and-cleaning)
+- ETL: Extract-Transform-Load work and cleaning the data set. 
+    * [Data Cleaning](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/docs/project_report#brief-on-data-acquiring-and-cleaning)
 - Problem: Work on defining problem itself and motivation for the analysis.
 - Algorithmic work: Work on the algorithms needed to work with the data, including integrating data mining and machine learning techniques.
 - Bigness/parallelization: Efficiency of the analysis on a cluster, and scalability to larger data sets.
