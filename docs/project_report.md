@@ -6,7 +6,7 @@
 
 When any business owner decides to open a new store(or expanding an existing business) at new city or a new neighbourhood, It can be challenging for business owners to decide on the best location/products for their stores so that they can make more profits.
 
-Also, when a Vendor salesmen approach business owners  asking them to keep/sell their products. A good analysis is need to check how theses products are doing in the market for that city.
+Also, when a Vendor salesmen approach business owners  asking them to keep/sell their products. A good analysis is needed to check how these products are doing in the market for that city.
 
 Analysis on above questions is necessary to take decisions such as the optimal location for their business,  what products they will sell, and how to increase sales when starting a new or
 expanding an existing business in a new city.
@@ -27,7 +27,7 @@ For example, if Safeway plans to open a new store in a new city, we can provide 
 As we mentioned, we used *["IOWA Liquor sales data"](https://data.iowa.gov/Sales-Distribution/Iowa-Liquor-Sales/m3tr-qhgy)* published by IOWA Government.
 Now, after obtaining the data, the next task was to clean it, extract-transform-load it into a Data Warehouse and then eventually into a Data Mart, and then generate reports like grouping the most popular drink by region. And the final stage i.e. to visualize the data and make it presentable to the clients.
 
- 1. **Brief on Data Acquiring and Cleaning**
+ 1. ####Brief on Data Acquiring and Cleaning
 
     The Iowa Alcoholic Beverages Division receives reports on wholesale transactions, and they make the data (from 2012 to the present) accessible at: [https://data.iowa.gov/](https://data.iowa.gov/Sales-Distribution/Iowa-Liquor-Sales/m3tr-qhgy).
 
@@ -35,7 +35,9 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     In order to facilitate analysis and remove redundant and erroneous data, we use the official store table and product table to replace the original data(by drop the columns from iowa-liquor). In this way, while proofreading the data, it also normalizes the data. After solving all the mentioned problems, the data becomes three tables of sale, store and product. Each table can be updated individually via Kafka in real-time. It is convenient for subsequent analysis and mining.
 
-2. **Overview of Historical Sales Data and Its Trend**
+    Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Data_Collecting/)
+
+2. ####Overview of Historical Sales Data and Its Trend
 
     Before we dive into any deeper analysis, we would like to have an overview of the historical sales data, and see whether there is a particular pattern of how the total sale changes.
 
@@ -44,7 +46,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
     Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Overview_Sale_By_Month#overview-of-history-sale-data-and-its-trend)
 
 
-3. **Some Questions We Intend to Answer**
+3. ####Some Questions We Intend to Answer
 
     [**Question 1.**](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q1_Growth_Rate#variance-of-growth-rate-under-different-market-segmentation)
     
@@ -114,14 +116,15 @@ Using this conclusion, we can help merchants make better site selection, and at 
 *A summary of what you did to guide our marking.*
 
 
-- Getting the data: Acquiring/gathering/downloading.
+- Getting the data: Acquiring/gathering/downloading. 
+    * We wrote a script to gather and download thi
 - ETL: Extract-Transform-Load work and cleaning the data set.
 - Problem: Work on defining problem itself and motivation for the analysis.
 - Algorithmic work: Work on the algorithms needed to work with the data, including integrating data mining and machine learning techniques.
 - Bigness/parallelization: Efficiency of the analysis on a cluster, and scalability to larger data sets.
--  UI: User interface to the results, possibly including web or data exploration frontends.
+-  UI: User interface to the results, possibly including web or data exploration frontends. 
       * We used the Github Pages and Github CI/CD pipleine to create this website to host our report and User interface to result of our analysis and Visualizations.
-- Visualization: Visualization of analysis results.
+- Visualization: Visualization of analysis results. 
       * We used Matplotlib python package and Orange Data Mining to plot a lot of charts to demonstrate the result of our analysis, such as scatter plot, bar charts and line charts.Instances of these can be found in the report and "README.md" of each problem.
 - Technologies: New technologies learned as part of doing the project. 
     * A few technologies we learned and used while completing this project are Orange Data Mining, Amazon S3, Python Spark, Amazon AWS EC2, Socrata, Matplotlib, Github Pages, Kafka streaming, Parquet file format.
