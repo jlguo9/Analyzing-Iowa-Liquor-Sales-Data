@@ -8,12 +8,12 @@ from pyspark.sql.types import StringType, DoubleType
 from pyspark.sql import Row
 
 
-def main(inputs,output):
-    df = spark.read.parquet(inputs)
+def main(input1,input2,output):
+    df = spark.read.parquet(input1) #store
     df.show(5)
     df.printSchema()
 
-    rfm = spark.read.option("header",True).csv('./cluster.csv')
+    rfm = spark.read.option("header",True).csv(input2) #RFM
     #rfm = rfm.drop(rfm['index'])
     rfm.show(5)
     rfm.printSchema()
@@ -24,8 +24,9 @@ def main(inputs,output):
 
 
 if __name__ == '__main__':
-    inputs = sys.argv[1] #parquet
-    output = sys.argv[2] #parquet
+    input1 = sys.argv[1] 
+    input2 = sys.argv[2]
+    output = sys.argv[3] 
     spark = SparkSession.builder.appName('Geo code').getOrCreate()
     assert spark.version >= '3.0' # make sure we have Spark 3.0+
     spark.sparkContext.setLogLevel('WARN')
