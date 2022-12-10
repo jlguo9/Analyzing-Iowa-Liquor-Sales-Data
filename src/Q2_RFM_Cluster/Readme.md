@@ -2,14 +2,14 @@
 
 ### Problem
 We hope that there is a way to find the best wholesaler and find commercial value through further research.
-RFM Segmentation is a great way to identify customer segments to be treated specially. People use this method to improve your customer marketing.
+RFM Segmentation is a great way to identify customer segments to be treated specially. People use this method to improve their customer marketing.
 For the current dataset Iowa Liquor, Stores and Products. We were curious whether merchants could be described by using the classic models commonly used in the retail industry, and thus makes traditional analytical methods also works with those merchants.
 
 ### Result
-At the beginning, we worry that since merchant purchase is a stable behavior, we do not know whether the Recently, field still has meaning before the analysis. After data processing, we use the RFM method to model the data.
+At the beginning, we worry that since merchant purchase is a stable behavior, we do not know whether the Recency, field still has meaning before the analysis. After data processing, we use the RFM method to model the data.
 Use the following steps:
 First define and process the data:
-Recently is simply the amount of time since the customer’s most recent transaction (most businesses use days, though for others it might make sense to use months, weeks or even hours instead).
+Recency is simply the amount of time since the customer’s most recent transaction (most businesses use days, though for others it might make sense to use months, weeks or even hours instead).
 Frequency is the total number of transactions made by the customer (during a defined period).
 Monetary is the total amount that the customer has spent across all transactions (during a defined period).
 We select the data of the most recent year as the defined period.
