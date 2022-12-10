@@ -29,10 +29,10 @@ def load_updates(last_update_date, site):
     select_statement = ":created_at > '" + date + "' OR :updated_at > '" + date + "'"   # prepare the WHERE statement
     
     # "results" is a list of dictionary. Each dictionary is one row from the dataset
-    results = client.get(site, where = select_statement, limit=5)    # limit=5 is for debugging. Remeber to remove it.
+    results = client.get(site, where = select_statement)    # limit=5 is for debugging. Remeber to remove it.
 
     if results:
-        print(results[0])   # for debugging
+        # print(results[0])   # for debugging
         return True, results
     else:
         return False, None
@@ -145,5 +145,5 @@ def main(last_update_date):
 
     
 if __name__ == '__main__':
-    last_update_date = datetime(year=2022,month=12,day=1,hour=0,minute=0,second=0)
+    last_update_date = datetime(year=2022,month=12,day=8,hour=0,minute=0,second=0)
     main(last_update_date)
