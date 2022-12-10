@@ -4,7 +4,7 @@
 ### Problem
 Assuming that the capital at hand is certain, how can we try to maximize the profit? 
 
-So, if the business owners has limited capital and limited inventory space which products would be the best ones to invest in or buy and keep in inventory. I.e to find the products that give maximum profits, at the same time, keeping in mind that the inventory space is limited. Therefore, optimizing both the constraints.
+So, if the business owners have limited capital and limited inventory space which products would be the best ones to invest in or buy and keep in inventory. I.e to find the products that give maximum profits, at the same time, keeping in mind that the inventory space is limited. Therefore, optimizing both the constraints.
 
 
 ### Results

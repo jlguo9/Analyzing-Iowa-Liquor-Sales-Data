@@ -64,7 +64,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
      Assuming that the capital at hand is certain, how can we try to maximize the profit? 
 
-    So, if the business owners has limited capital and limited inventory space which products would be the best ones to invest in or buy and keep in inventory. I.e to find the products that give maximum profits, at the same time, keeping in mind that the inventory space is limited. Therefore, optimizing both the constraints.
+    So, if the business owners have limited capital and limited inventory space which products would be the best ones to invest in or buy and keep in inventory. I.e to find the products that give maximum profits, at the same time, keeping in mind that the inventory space is limited. Therefore, optimizing both the constraints.
 
 
 
@@ -85,13 +85,13 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 ## Results: 
 *What are the outcomes of the project? What did you learn from the data analysis? What did you learn from the implementation?*
 
-- Problem 1: What Are the Most Effective Market Segmentation Scenarios?
+- **Problem 1:** What Are the Most Effective Market Segmentation Scenarios?
 
     Using a single feature as the segmentation scenario usually won't incur a large variation among different segments. The segmentation scenario that causes the largest variance is "city + category + grade", while other several scenarios followed closely behind also performe well. Vendors should take the top several scenarios into consideration and get a look in depth into different segments under them.
 
     [Check More Details here](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q1_Growth_Rate#results)
 
-- Problem 2: Describe and Classify the Current Stores with Respect to Using RFM Model
+- **Problem 2:** Describe and Classify the Current Stores with Respect to Using RFM Model
 
     Through analysis, we found that traditional retail analysis methods can be used to analyze merchants.
 At the same time, we found that the features obtained by using RFM can classify merchants very well.
@@ -101,7 +101,7 @@ Using this conclusion, we can help merchants make better site selection, and at 
     [Check More Details here](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q2_RFM_Cluster#result)
 
 
-- Problem 3: Optimizing Profit
+- **Problem 3:** Optimizing Profit
 
     For the period (30/07/2022 - 30/10/2022), We found that Products like "HA last drop Scotch" and "Remy Martin  Louis" can give profit upto **USD 1000** per bottle. selling just 100s of these bottles can give profit of atleast **USD 100,000** in just 3 months.
 
