@@ -99,7 +99,7 @@ Using this conclusion, we can help merchants make better site selection, and at 
     Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q2_RFM_Cluster#result)
 
 
-- Problem 3: Describe and Classify the store using RFM model
+- Problem 3: Optimizing Profit
 
     For the period (30/07/2022 - 30/10/2022), We found that Products like "HA last drop Scotch" and "Remy Martin  Louis" can give profit upto **USD 1000** per bottle. selling just 100s of these bottles can give profit of atleast **USD 100,000** in just 3 months.
 
@@ -127,5 +127,5 @@ Using this conclusion, we can help merchants make better site selection, and at 
     * A few technologies we learned and used while completing this project are Orange Data Mining, Amazon S3, Python Spark, Amazon AWS EC2, Socrata, Matplotlib, Github Pages, Kafka streaming, Parquet file format.
 
 
-Project Contributors: Song Lin (sla475, 301550328), Shlok Nangia (sna101, 301550257), Jialiang Guo (jga169, 301558771)
+**Project Contributors:** Song Lin (sla475, 301550328), Shlok Nangia (sna101, 301550257), Jialiang Guo (jga169, 301558771)
 
