@@ -23,7 +23,7 @@
 	
 where "sale|product|store" is the path of sale or product or stroe table in csv format, and "output" is the path of location where you want the outputs to be stored. The output is the data file after cleaning.
 
-<u>We have provided the output of the above scripts i.e. cleaned data in out repo inside ["cleaned_data"](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/cleaned_data) folder.</u>
+##### We have provided the output of the above scripts i.e. cleaned data in out repo inside ["cleaned_data"](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/cleaned_data) folder.
 
 ### check_update.py
 
@@ -87,7 +87,7 @@ where "storeData file" is the path of store table in parquet format, "RFM file" 
 
 ### Running optimization_problem.py 
 
-    $ spark-submit ./src/Q3_Optimization_problem/optimization_problem.py <input_1> <input_2>../../../project_data/testsale ../../../project_data/product
+    $ spark-submit ./src/Q3_Optimization_problem/optimization_problem.py <input_1> <input_2>
 
 
-where "input_1" is the path to (normalized) folder which contains sales data(in parquet files) and "input_2" is the path to folder which contains product data
+where "input_1" is the path to (normalized) folder which contains sales data(in parquet files) i.e. "./cleaned_data/sale" and "input_2" is the path to folder which contains product data i.e. "./cleaned_data/product". And the output images will be generated in folder "./Q3_Optimization_problem/"
