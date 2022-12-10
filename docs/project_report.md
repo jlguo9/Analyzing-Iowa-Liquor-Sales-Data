@@ -27,7 +27,7 @@ For example, if Safeway plans to open a new store in a new city, we can provide 
 As we mentioned, we used *["IOWA Liquor sales data"](https://data.iowa.gov/Sales-Distribution/Iowa-Liquor-Sales/m3tr-qhgy)* published by IOWA Government.
 Now, after obtaining the data, the next task was to clean it, extract-transform-load it into a Data Warehouse and then eventually into a Data Mart, and then generate reports like grouping the most popular drink by region. And the final stage i.e. to visualize the data and make it presentable to the clients.
 
- 1. ####Brief on Data Acquiring and Cleaning
+ 1. #### Brief on Data Acquiring and Cleaning
 
     The Iowa Alcoholic Beverages Division receives reports on wholesale transactions, and they make the data (from 2012 to the present) accessible at: [https://data.iowa.gov/](https://data.iowa.gov/Sales-Distribution/Iowa-Liquor-Sales/m3tr-qhgy).
 
@@ -37,7 +37,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
 
     Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Data_Collecting/)
 
-2. ####Overview of Historical Sales Data and Its Trend
+2. #### Overview of Historical Sales Data and Its Trend
 
     Before we dive into any deeper analysis, we would like to have an overview of the historical sales data, and see whether there is a particular pattern of how the total sale changes.
 
@@ -46,7 +46,7 @@ Now, after obtaining the data, the next task was to clean it, extract-transform-
     Check More Details here: [README.md](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Overview_Sale_By_Month#overview-of-history-sale-data-and-its-trend)
 
 
-3. ####Some Questions We Intend to Answer
+3. #### Some Questions We Intend to Answer
 
     [**Question 1.**](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/src/Q1_Growth_Rate#variance-of-growth-rate-under-different-market-segmentation)
     
