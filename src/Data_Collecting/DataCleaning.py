@@ -107,14 +107,9 @@ def main(data,inputs,output):
 if __name__ == '__main__':
     inputs = sys.argv[2] #rawdata
     output = sys.argv[3] #parquet file
-    data = sys.argv[1] # type
-    inputs = sys.argv[2] #rawdata
-    output = sys.argv[3] #parquet file
     data = sys.argv[1] #parquet file
     spark = SparkSession.builder.appName('datacleaning code').getOrCreate()
     assert spark.version >= '3.0' # make sure we have Spark 3.0+
     spark.sparkContext.setLogLevel('WARN')
     sc = spark.sparkContext
-    main(data, inputs, output)
-
     main(data,inputs, output)
