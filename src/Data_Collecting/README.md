@@ -14,3 +14,10 @@ Which downloads the data from the official site, cleans the data(using DataClean
 
 ![](s3_bucket.png)
 
+The contents of output folder contains 3 folders 
+
+- product - product data in csv  format
+- sale- sales data in parquet format
+- store - store data in parquet format
+
+All the above mentioned folders are provided in Github Repo inside ["cleaned_data"](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/cleaned_data) folder.

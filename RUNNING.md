@@ -23,6 +23,8 @@
 	
 where "sale|product|store" is the path of sale or product or stroe table in csv format, and "output" is the path of location where you want the outputs to be stored. The output is the data file after cleaning.
 
+<u>We have provided the output of the above scripts i.e. cleaned data in out repo inside ["cleaned_data"](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project/tree/main/cleaned_data) folder.</u>
+
 ### check_update.py
 
 This is the producer of Kafka.
