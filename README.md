@@ -14,6 +14,6 @@ Video Link: [https://www.youtube.com/watch?v=3TiFN772ZN0](https://www.youtube.co
 
 Team Members:
 
-- Song Lin (301550328)
-- Shlok Nangia (301550257)
-- Jialiang Guo (301558771)
+- Song Lin
+- Shlok Nangia
+- Jialiang Guo

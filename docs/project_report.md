@@ -133,5 +133,5 @@ Using this conclusion, we can help merchants make better site selection, and at 
 
 **Total: 20**
 
-**Project Contributors:** Song Lin (sla475, 301550328), Shlok Nangia (sna101, 301550257), Jialiang Guo (jga169, 301558771)
+**Project Contributors:** Song Lin, Shlok Nangia, Jialiang Guo
 
