@@ -4,7 +4,7 @@
 
 This is the repository for our final project for CMPT 732 Big Data Lab at SFU.
 
-Please find the Final Report hosted [here](https://pages.github.sfu.ca/sna101/3_datamen_CMPT_732_project/docs/project_report).
+Please find the Final Report [here](https://github.com/jlguo9/Analyzing-Iowa-Liquor-Sales-Data/blob/main/docs/project_report.md)
 
 Repository Link: [https://github.sfu.ca/sna101/3_datamen_CMPT_732_project](https://github.sfu.ca/sna101/3_datamen_CMPT_732_project)
 
